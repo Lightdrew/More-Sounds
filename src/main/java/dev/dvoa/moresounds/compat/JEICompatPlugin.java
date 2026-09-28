@@ -21,8 +21,9 @@ import javax.annotation.Nullable;
 
 /**
  * JEI compatibility plugin for More Sounds.
- * We register an event that fires on mouse click when registered by JEI.
- * When a valid click is detected, getItemUnderMouse tries to get the item from the screen.
+ * When JEI discovers and loads the plugin we register our listener for the MouseButtonPressed event.
+ * After checking that a JEI runtime is actually present and the event constitutes a valid click it tries to fetch whatever item is under the cursor,
+ * either from the ingredient list, the bookmarks or the recipes GUI, and if found plays its associated sound.
  */
 @JeiPlugin
 public class JEICompatPlugin implements IModPlugin
